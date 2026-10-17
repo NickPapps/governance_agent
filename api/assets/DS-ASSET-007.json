@@ -1,0 +1,59 @@
+{
+  "source": "Data Sentinel (mock)",
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "asset": {
+    "assetId": "DS-ASSET-007",
+    "name": "Shippers",
+    "dataverseEquivalent": "account (carrier)",
+    "domain": "Supply Chain",
+    "owner": "Steven Buchanan",
+    "ownerEmail": "steven.buchanan@contoso.com",
+    "classification": "Public",
+    "riskLevel": "Low",
+    "riskScore": 8,
+    "qualityScore": 99,
+    "rowCount": 3,
+    "description": "Carrier reference list.",
+    "lineage": [
+      "Dynamics 365 (account, carrier relationship type)"
+    ],
+    "columns": [
+      {
+        "column": "ShipperID",
+        "dataType": "int32",
+        "tags": [
+          "Identifier"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "CompanyName",
+        "dataType": "string",
+        "tags": [
+          "Business.OrgName"
+        ],
+        "sensitivity": "Public"
+      },
+      {
+        "column": "Phone",
+        "dataType": "string",
+        "tags": [
+          "Business.Phone"
+        ],
+        "sensitivity": "Internal"
+      }
+    ],
+    "system": "Contoso Dynamics 365 Sales (Dataverse)",
+    "systemId": "SYS-D365-SALES-01",
+    "sourceTable": "Northwind.svc/Shippers",
+    "containsPII": false,
+    "piiColumnCount": 0,
+    "tagSummary": [
+      "Business.OrgName",
+      "Business.Phone",
+      "Identifier"
+    ],
+    "lastScanned": "2026-10-15T02:10:00Z",
+    "sourceLink": "https://datasentinel.contoso.com/assets/DS-ASSET-007"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "source": "Data Sentinel (mock)",
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "asset": {
+    "assetId": "DS-ASSET-004",
+    "name": "Order_Details",
+    "dataverseEquivalent": "salesorderdetail",
+    "domain": "Sales",
+    "owner": "Nancy Davolio",
+    "ownerEmail": "nancy.davolio@contoso.com",
+    "classification": "Internal",
+    "riskLevel": "Low",
+    "riskScore": 22,
+    "qualityScore": 97,
+    "rowCount": 2155,
+    "description": "Order line items: product, unit price, quantity and discount.",
+    "lineage": [
+      "Dynamics 365 Sales (salesorderdetail)",
+      "Lakehouse silver.sales_order_lines"
+    ],
+    "columns": [
+      {
+        "column": "OrderID",
+        "dataType": "int32",
+        "tags": [
+          "Identifier",
+          "ForeignKey:Orders"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "ProductID",
+        "dataType": "int32",
+        "tags": [
+          "Identifier",
+          "ForeignKey:Products"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "UnitPrice",
+        "dataType": "decimal",
+        "tags": [
+          "Financial.Price"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "Quantity",
+        "dataType": "int16",
+        "tags": [
+          "Transaction.Quantity"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "Discount",
+        "dataType": "single",
+        "tags": [
+          "Financial.Discount"
+        ],
+        "sensitivity": "Internal"
+      }
+    ],
+    "system": "Contoso Dynamics 365 Sales (Dataverse)",
+    "systemId": "SYS-D365-SALES-01",
+    "sourceTable": "Northwind.svc/Order_Details",
+    "containsPII": false,
+    "piiColumnCount": 0,
+    "tagSummary": [
+      "Financial.Discount",
+      "Financial.Price",
+      "ForeignKey",
+      "Identifier",
+      "Transaction.Quantity"
+    ],
+    "lastScanned": "2026-10-15T02:10:00Z",
+    "sourceLink": "https://datasentinel.contoso.com/assets/DS-ASSET-004"
+  }
+}

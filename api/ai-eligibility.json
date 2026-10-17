@@ -1,0 +1,150 @@
+{
+  "source": "Data Sentinel (mock)",
+  "system": {
+    "systemId": "SYS-D365-SALES-01",
+    "systemName": "Contoso Dynamics 365 Sales (Dataverse)",
+    "platform": "Microsoft Dataverse",
+    "environment": "Production",
+    "standInSource": "https://services.odata.org/V4/Northwind/Northwind.svc",
+    "note": "Demo stand-in. Northwind OData V4 tables play the role of Dataverse tables."
+  },
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "count": 8,
+  "decisions": [
+    {
+      "assetId": "DS-ASSET-001",
+      "asset": "Customers",
+      "domain": "Sales",
+      "decision": "EligibleWithMasking",
+      "reasons": [
+        "Contains PII (name, address, phone)",
+        "Open policy violation DS-F-1003"
+      ],
+      "requiredControls": [
+        "Mask ContactName, Phone, Fax",
+        "Return aggregates or identifiers only",
+        "Log all agent queries"
+      ],
+      "decidedBy": "Data Governance Council",
+      "decidedAt": "2026-10-15T09:00:00Z",
+      "validUntil": "2027-01-15T00:00:00Z",
+      "sourceLink": "https://datasentinel.contoso.com/ai-eligibility/DS-ASSET-001"
+    },
+    {
+      "assetId": "DS-ASSET-002",
+      "asset": "Employees",
+      "domain": "HR",
+      "decision": "NotEligible",
+      "reasons": [
+        "Restricted classification",
+        "Critical open violation DS-F-1001",
+        "Potential special-category data in Notes"
+      ],
+      "requiredControls": [
+        "Resolve DS-F-1001 and DS-F-1002",
+        "HR data owner approval",
+        "Re-scan"
+      ],
+      "decidedBy": "Data Governance Council",
+      "decidedAt": "2026-10-15T09:00:00Z",
+      "validUntil": "2027-01-15T00:00:00Z",
+      "sourceLink": "https://datasentinel.contoso.com/ai-eligibility/DS-ASSET-002"
+    },
+    {
+      "assetId": "DS-ASSET-003",
+      "asset": "Orders",
+      "domain": "Sales",
+      "decision": "EligibleWithMasking",
+      "reasons": [
+        "Ship-to name and address are PII"
+      ],
+      "requiredControls": [
+        "Exclude ShipName/ShipAddress/ShipPostalCode from agent responses",
+        "Aggregate Freight by period"
+      ],
+      "decidedBy": "Data Governance Council",
+      "decidedAt": "2026-10-15T09:00:00Z",
+      "validUntil": "2027-01-15T00:00:00Z",
+      "sourceLink": "https://datasentinel.contoso.com/ai-eligibility/DS-ASSET-003"
+    },
+    {
+      "assetId": "DS-ASSET-004",
+      "asset": "Order_Details",
+      "domain": "Sales",
+      "decision": "Eligible",
+      "reasons": [
+        "No PII",
+        "Quality score 97"
+      ],
+      "requiredControls": [
+        "Standard logging"
+      ],
+      "decidedBy": "Data Governance Council",
+      "decidedAt": "2026-10-15T09:00:00Z",
+      "validUntil": "2027-01-15T00:00:00Z",
+      "sourceLink": "https://datasentinel.contoso.com/ai-eligibility/DS-ASSET-004"
+    },
+    {
+      "assetId": "DS-ASSET-005",
+      "asset": "Products",
+      "domain": "Supply Chain",
+      "decision": "Eligible",
+      "reasons": [
+        "No PII",
+        "Quality score 93"
+      ],
+      "requiredControls": [
+        "Standard logging"
+      ],
+      "decidedBy": "Data Governance Council",
+      "decidedAt": "2026-10-15T09:00:00Z",
+      "validUntil": "2027-01-15T00:00:00Z",
+      "sourceLink": "https://datasentinel.contoso.com/ai-eligibility/DS-ASSET-005"
+    },
+    {
+      "assetId": "DS-ASSET-006",
+      "asset": "Suppliers",
+      "domain": "Supply Chain",
+      "decision": "EligibleWithMasking",
+      "reasons": [
+        "Supplier contact PII",
+        "Open finding DS-F-1005"
+      ],
+      "requiredControls": [
+        "Mask ContactName and Phone"
+      ],
+      "decidedBy": "Data Governance Council",
+      "decidedAt": "2026-10-15T09:00:00Z",
+      "validUntil": "2027-01-15T00:00:00Z",
+      "sourceLink": "https://datasentinel.contoso.com/ai-eligibility/DS-ASSET-006"
+    },
+    {
+      "assetId": "DS-ASSET-007",
+      "asset": "Shippers",
+      "domain": "Supply Chain",
+      "decision": "Eligible",
+      "reasons": [
+        "Public reference data"
+      ],
+      "requiredControls": [],
+      "decidedBy": "Data Governance Council",
+      "decidedAt": "2026-10-15T09:00:00Z",
+      "validUntil": "2027-01-15T00:00:00Z",
+      "sourceLink": "https://datasentinel.contoso.com/ai-eligibility/DS-ASSET-007"
+    },
+    {
+      "assetId": "DS-ASSET-008",
+      "asset": "Categories",
+      "domain": "Supply Chain",
+      "decision": "Eligible",
+      "reasons": [
+        "Public reference data"
+      ],
+      "requiredControls": [],
+      "decidedBy": "Data Governance Council",
+      "decidedAt": "2026-10-15T09:00:00Z",
+      "validUntil": "2027-01-15T00:00:00Z",
+      "sourceLink": "https://datasentinel.contoso.com/ai-eligibility/DS-ASSET-008"
+    }
+  ]
+}

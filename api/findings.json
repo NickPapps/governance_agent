@@ -1,0 +1,146 @@
+{
+  "source": "Data Sentinel (mock)",
+  "system": {
+    "systemId": "SYS-D365-SALES-01",
+    "systemName": "Contoso Dynamics 365 Sales (Dataverse)",
+    "platform": "Microsoft Dataverse",
+    "environment": "Production",
+    "standInSource": "https://services.odata.org/V4/Northwind/Northwind.svc",
+    "note": "Demo stand-in. Northwind OData V4 tables play the role of Dataverse tables."
+  },
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "count": 7,
+  "findings": [
+    {
+      "findingId": "DS-F-1001",
+      "assetId": "DS-ASSET-002",
+      "asset": "Employees",
+      "domain": "HR",
+      "type": "PolicyViolation",
+      "policy": "POL-PII-004 Date of birth must be masked outside HR",
+      "severity": "Critical",
+      "status": "Open",
+      "owner": "Andrew Fuller",
+      "detectedAt": "2026-10-02T03:14:00Z",
+      "description": "BirthDate is replicated unmasked to the Lakehouse and exposed to the HR Agent knowledge source.",
+      "recommendedAction": "Apply dynamic masking to BirthDate in Lakehouse silver layer; remove column from agent knowledge index.",
+      "affectedColumns": [
+        "BirthDate"
+      ],
+      "sourceLink": "https://datasentinel.contoso.com/findings/DS-F-1001"
+    },
+    {
+      "findingId": "DS-F-1002",
+      "assetId": "DS-ASSET-002",
+      "asset": "Employees",
+      "domain": "HR",
+      "type": "RiskFinding",
+      "policy": "POL-SPECIAL-001 Special category data must not reside in free text",
+      "severity": "High",
+      "status": "Open",
+      "owner": "Andrew Fuller",
+      "detectedAt": "2026-10-02T03:14:00Z",
+      "description": "Classifier detected health-related terms in the Notes column (2 of 9 rows).",
+      "recommendedAction": "Review flagged rows with HR; move content to a controlled HR system or redact.",
+      "affectedColumns": [
+        "Notes"
+      ],
+      "sourceLink": "https://datasentinel.contoso.com/findings/DS-F-1002"
+    },
+    {
+      "findingId": "DS-F-1003",
+      "assetId": "DS-ASSET-001",
+      "asset": "Customers",
+      "domain": "Sales",
+      "type": "PolicyViolation",
+      "policy": "POL-AI-002 PII must be masked before use by AI agents",
+      "severity": "High",
+      "status": "InProgress",
+      "owner": "Maria Anders",
+      "detectedAt": "2026-09-28T01:50:00Z",
+      "description": "ContactName and Phone are returned unmasked by the 'Sales 360' Power BI dataset consumed by a Copilot agent.",
+      "recommendedAction": "Create a masked view (contacts_masked) and re-point the agent tool to it.",
+      "affectedColumns": [
+        "ContactName",
+        "Phone",
+        "Fax"
+      ],
+      "sourceLink": "https://datasentinel.contoso.com/findings/DS-F-1003"
+    },
+    {
+      "findingId": "DS-F-1004",
+      "assetId": "DS-ASSET-003",
+      "asset": "Orders",
+      "domain": "Sales",
+      "type": "QualityIssue",
+      "policy": "DQ-ORD-010 Shipped orders must have a ShippedDate",
+      "severity": "Medium",
+      "status": "Open",
+      "owner": "Nancy Davolio",
+      "detectedAt": "2026-10-10T02:05:00Z",
+      "description": "21 orders have a null ShippedDate more than 30 days after OrderDate.",
+      "recommendedAction": "Backfill from carrier confirmations; add validation rule in Dynamics.",
+      "affectedColumns": [
+        "ShippedDate"
+      ],
+      "sourceLink": "https://datasentinel.contoso.com/findings/DS-F-1004"
+    },
+    {
+      "findingId": "DS-F-1005",
+      "assetId": "DS-ASSET-006",
+      "asset": "Suppliers",
+      "domain": "Supply Chain",
+      "type": "RiskFinding",
+      "policy": "POL-ACCESS-003 Least-privilege access to contact data",
+      "severity": "Medium",
+      "status": "Open",
+      "owner": "Steven Buchanan",
+      "detectedAt": "2026-10-05T02:40:00Z",
+      "description": "Supplier contact phone numbers are readable by the 'All Employees' security role.",
+      "recommendedAction": "Restrict column-level security to Procurement role.",
+      "affectedColumns": [
+        "Phone",
+        "ContactName"
+      ],
+      "sourceLink": "https://datasentinel.contoso.com/findings/DS-F-1005"
+    },
+    {
+      "findingId": "DS-F-1006",
+      "assetId": "DS-ASSET-003",
+      "asset": "Orders",
+      "domain": "Sales",
+      "type": "RiskFinding",
+      "policy": "POL-RET-002 Transactional PII retention 7 years",
+      "severity": "Low",
+      "status": "Resolved",
+      "owner": "Nancy Davolio",
+      "detectedAt": "2026-08-12T02:00:00Z",
+      "resolvedAt": "2026-09-30T16:20:00Z",
+      "description": "Ship-to addresses older than retention window were present in the bronze layer.",
+      "recommendedAction": "Purged; retention job scheduled monthly.",
+      "affectedColumns": [
+        "ShipAddress",
+        "ShipName"
+      ],
+      "sourceLink": "https://datasentinel.contoso.com/findings/DS-F-1006"
+    },
+    {
+      "findingId": "DS-F-1007",
+      "assetId": "DS-ASSET-001",
+      "asset": "Customers",
+      "domain": "Sales",
+      "type": "QualityIssue",
+      "policy": "DQ-CUST-003 Region must be populated for NA customers",
+      "severity": "Low",
+      "status": "Open",
+      "owner": "Maria Anders",
+      "detectedAt": "2026-10-10T02:05:00Z",
+      "description": "Region is null for 60 of 91 customers, including 4 in the USA and Canada.",
+      "recommendedAction": "Populate Region via address standardization service.",
+      "affectedColumns": [
+        "Region"
+      ],
+      "sourceLink": "https://datasentinel.contoso.com/findings/DS-F-1007"
+    }
+  ]
+}

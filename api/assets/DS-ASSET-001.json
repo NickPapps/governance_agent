@@ -1,0 +1,129 @@
+{
+  "source": "Data Sentinel (mock)",
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "asset": {
+    "assetId": "DS-ASSET-001",
+    "name": "Customers",
+    "dataverseEquivalent": "account",
+    "domain": "Sales",
+    "owner": "Maria Anders",
+    "ownerEmail": "maria.anders@contoso.com",
+    "classification": "Confidential",
+    "riskLevel": "High",
+    "riskScore": 82,
+    "qualityScore": 91,
+    "rowCount": 91,
+    "description": "Customer master: company, primary contact and billing location.",
+    "lineage": [
+      "Dynamics 365 Sales (account)",
+      "Azure Synapse Link \u2192 Lakehouse bronze.account",
+      "Power BI: Sales 360"
+    ],
+    "columns": [
+      {
+        "column": "CustomerID",
+        "dataType": "string",
+        "tags": [
+          "Identifier"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "CompanyName",
+        "dataType": "string",
+        "tags": [
+          "Business.OrgName"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "ContactName",
+        "dataType": "string",
+        "tags": [
+          "PII.Name"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "ContactTitle",
+        "dataType": "string",
+        "tags": [
+          "PII.JobTitle"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "Address",
+        "dataType": "string",
+        "tags": [
+          "PII.Address"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "City",
+        "dataType": "string",
+        "tags": [
+          "Location"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "Region",
+        "dataType": "string",
+        "tags": [
+          "Location"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "PostalCode",
+        "dataType": "string",
+        "tags": [
+          "PII.Address"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "Country",
+        "dataType": "string",
+        "tags": [
+          "Location"
+        ],
+        "sensitivity": "Public"
+      },
+      {
+        "column": "Phone",
+        "dataType": "string",
+        "tags": [
+          "PII.Phone"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "Fax",
+        "dataType": "string",
+        "tags": [
+          "PII.Phone"
+        ],
+        "sensitivity": "Confidential"
+      }
+    ],
+    "system": "Contoso Dynamics 365 Sales (Dataverse)",
+    "systemId": "SYS-D365-SALES-01",
+    "sourceTable": "Northwind.svc/Customers",
+    "containsPII": true,
+    "piiColumnCount": 6,
+    "tagSummary": [
+      "Business.OrgName",
+      "Identifier",
+      "Location",
+      "PII.Address",
+      "PII.JobTitle",
+      "PII.Name",
+      "PII.Phone"
+    ],
+    "lastScanned": "2026-10-15T02:10:00Z",
+    "sourceLink": "https://datasentinel.contoso.com/assets/DS-ASSET-001"
+  }
+}

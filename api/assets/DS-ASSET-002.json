@@ -1,0 +1,165 @@
+{
+  "source": "Data Sentinel (mock)",
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "asset": {
+    "assetId": "DS-ASSET-002",
+    "name": "Employees",
+    "dataverseEquivalent": "systemuser",
+    "domain": "HR",
+    "owner": "Andrew Fuller",
+    "ownerEmail": "andrew.fuller@contoso.com",
+    "classification": "Restricted",
+    "riskLevel": "Critical",
+    "riskScore": 94,
+    "qualityScore": 78,
+    "rowCount": 9,
+    "description": "Employee records including personal contact details, birth date and free-text notes.",
+    "lineage": [
+      "Dynamics 365 (systemuser)",
+      "HR export \u2192 SharePoint 'People Ops'",
+      "Copilot Studio HR Agent (knowledge)"
+    ],
+    "columns": [
+      {
+        "column": "EmployeeID",
+        "dataType": "int32",
+        "tags": [
+          "Identifier"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "LastName",
+        "dataType": "string",
+        "tags": [
+          "PII.Name"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "FirstName",
+        "dataType": "string",
+        "tags": [
+          "PII.Name"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "Title",
+        "dataType": "string",
+        "tags": [
+          "PII.JobTitle"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "BirthDate",
+        "dataType": "datetime",
+        "tags": [
+          "PII.DateOfBirth"
+        ],
+        "sensitivity": "Restricted",
+        "note": "Unmasked; no retention rule applied."
+      },
+      {
+        "column": "HireDate",
+        "dataType": "datetime",
+        "tags": [
+          "HR.Employment"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "Address",
+        "dataType": "string",
+        "tags": [
+          "PII.Address"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "City",
+        "dataType": "string",
+        "tags": [
+          "Location"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "PostalCode",
+        "dataType": "string",
+        "tags": [
+          "PII.Address"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "Country",
+        "dataType": "string",
+        "tags": [
+          "Location"
+        ],
+        "sensitivity": "Public"
+      },
+      {
+        "column": "HomePhone",
+        "dataType": "string",
+        "tags": [
+          "PII.Phone"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "Photo",
+        "dataType": "binary",
+        "tags": [
+          "PII.Image",
+          "Biometric.Potential"
+        ],
+        "sensitivity": "Restricted"
+      },
+      {
+        "column": "Notes",
+        "dataType": "string",
+        "tags": [
+          "FreeText",
+          "PII.Potential",
+          "SpecialCategory.Potential"
+        ],
+        "sensitivity": "Restricted",
+        "note": "Free text; classifier found health-related terms in 2 of 9 rows."
+      },
+      {
+        "column": "ReportsTo",
+        "dataType": "int32",
+        "tags": [
+          "HR.OrgStructure"
+        ],
+        "sensitivity": "Internal"
+      }
+    ],
+    "system": "Contoso Dynamics 365 Sales (Dataverse)",
+    "systemId": "SYS-D365-SALES-01",
+    "sourceTable": "Northwind.svc/Employees",
+    "containsPII": true,
+    "piiColumnCount": 9,
+    "tagSummary": [
+      "Biometric.Potential",
+      "FreeText",
+      "HR.Employment",
+      "HR.OrgStructure",
+      "Identifier",
+      "Location",
+      "PII.Address",
+      "PII.DateOfBirth",
+      "PII.Image",
+      "PII.JobTitle",
+      "PII.Name",
+      "PII.Phone",
+      "PII.Potential",
+      "SpecialCategory.Potential"
+    ],
+    "lastScanned": "2026-10-15T02:10:00Z",
+    "sourceLink": "https://datasentinel.contoso.com/assets/DS-ASSET-002"
+  }
+}

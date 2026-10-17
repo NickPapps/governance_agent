@@ -1,0 +1,140 @@
+{
+  "source": "Data Sentinel (mock)",
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "asset": {
+    "assetId": "DS-ASSET-003",
+    "name": "Orders",
+    "dataverseEquivalent": "salesorder",
+    "domain": "Sales",
+    "owner": "Nancy Davolio",
+    "ownerEmail": "nancy.davolio@contoso.com",
+    "classification": "Confidential",
+    "riskLevel": "Medium",
+    "riskScore": 55,
+    "qualityScore": 84,
+    "rowCount": 830,
+    "description": "Sales order headers with shipping address and freight.",
+    "lineage": [
+      "Dynamics 365 Sales (salesorder)",
+      "Lakehouse silver.sales_orders",
+      "Power BI: Order Pipeline"
+    ],
+    "columns": [
+      {
+        "column": "OrderID",
+        "dataType": "int32",
+        "tags": [
+          "Identifier"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "CustomerID",
+        "dataType": "string",
+        "tags": [
+          "Identifier",
+          "ForeignKey:Customers"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "EmployeeID",
+        "dataType": "int32",
+        "tags": [
+          "Identifier",
+          "ForeignKey:Employees"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "OrderDate",
+        "dataType": "datetime",
+        "tags": [
+          "Transaction.Date"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "RequiredDate",
+        "dataType": "datetime",
+        "tags": [
+          "Transaction.Date"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "ShippedDate",
+        "dataType": "datetime",
+        "tags": [
+          "Transaction.Date"
+        ],
+        "sensitivity": "Internal",
+        "note": "21 open orders have null ShippedDate older than 30 days."
+      },
+      {
+        "column": "Freight",
+        "dataType": "decimal",
+        "tags": [
+          "Financial.Amount"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "ShipName",
+        "dataType": "string",
+        "tags": [
+          "PII.Name"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "ShipAddress",
+        "dataType": "string",
+        "tags": [
+          "PII.Address"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "ShipCity",
+        "dataType": "string",
+        "tags": [
+          "Location"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "ShipPostalCode",
+        "dataType": "string",
+        "tags": [
+          "PII.Address"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "ShipCountry",
+        "dataType": "string",
+        "tags": [
+          "Location"
+        ],
+        "sensitivity": "Public"
+      }
+    ],
+    "system": "Contoso Dynamics 365 Sales (Dataverse)",
+    "systemId": "SYS-D365-SALES-01",
+    "sourceTable": "Northwind.svc/Orders",
+    "containsPII": true,
+    "piiColumnCount": 3,
+    "tagSummary": [
+      "Financial.Amount",
+      "ForeignKey",
+      "Identifier",
+      "Location",
+      "PII.Address",
+      "PII.Name",
+      "Transaction.Date"
+    ],
+    "lastScanned": "2026-10-15T02:10:00Z",
+    "sourceLink": "https://datasentinel.contoso.com/assets/DS-ASSET-003"
+  }
+}

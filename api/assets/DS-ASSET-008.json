@@ -1,0 +1,59 @@
+{
+  "source": "Data Sentinel (mock)",
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "asset": {
+    "assetId": "DS-ASSET-008",
+    "name": "Categories",
+    "dataverseEquivalent": "productcategory (custom)",
+    "domain": "Supply Chain",
+    "owner": "Steven Buchanan",
+    "ownerEmail": "steven.buchanan@contoso.com",
+    "classification": "Public",
+    "riskLevel": "Low",
+    "riskScore": 5,
+    "qualityScore": 100,
+    "rowCount": 8,
+    "description": "Product category reference data.",
+    "lineage": [
+      "Dynamics 365 (custom table)"
+    ],
+    "columns": [
+      {
+        "column": "CategoryID",
+        "dataType": "int32",
+        "tags": [
+          "Identifier"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "CategoryName",
+        "dataType": "string",
+        "tags": [
+          "Business.Category"
+        ],
+        "sensitivity": "Public"
+      },
+      {
+        "column": "Description",
+        "dataType": "string",
+        "tags": [
+          "FreeText"
+        ],
+        "sensitivity": "Public"
+      }
+    ],
+    "system": "Contoso Dynamics 365 Sales (Dataverse)",
+    "systemId": "SYS-D365-SALES-01",
+    "sourceTable": "Northwind.svc/Categories",
+    "containsPII": false,
+    "piiColumnCount": 0,
+    "tagSummary": [
+      "Business.Category",
+      "FreeText",
+      "Identifier"
+    ],
+    "lastScanned": "2026-10-15T02:10:00Z",
+    "sourceLink": "https://datasentinel.contoso.com/assets/DS-ASSET-008"
+  }
+}

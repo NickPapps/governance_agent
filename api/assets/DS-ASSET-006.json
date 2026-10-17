@@ -1,0 +1,113 @@
+{
+  "source": "Data Sentinel (mock)",
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "asset": {
+    "assetId": "DS-ASSET-006",
+    "name": "Suppliers",
+    "dataverseEquivalent": "account (vendor)",
+    "domain": "Supply Chain",
+    "owner": "Steven Buchanan",
+    "ownerEmail": "steven.buchanan@contoso.com",
+    "classification": "Confidential",
+    "riskLevel": "Medium",
+    "riskScore": 48,
+    "qualityScore": 88,
+    "rowCount": 29,
+    "description": "Supplier master with contact person and address.",
+    "lineage": [
+      "Dynamics 365 (account, vendor relationship type)",
+      "Lakehouse silver.suppliers"
+    ],
+    "columns": [
+      {
+        "column": "SupplierID",
+        "dataType": "int32",
+        "tags": [
+          "Identifier"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "CompanyName",
+        "dataType": "string",
+        "tags": [
+          "Business.OrgName"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "ContactName",
+        "dataType": "string",
+        "tags": [
+          "PII.Name"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "ContactTitle",
+        "dataType": "string",
+        "tags": [
+          "PII.JobTitle"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "Address",
+        "dataType": "string",
+        "tags": [
+          "PII.Address"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "City",
+        "dataType": "string",
+        "tags": [
+          "Location"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "Country",
+        "dataType": "string",
+        "tags": [
+          "Location"
+        ],
+        "sensitivity": "Public"
+      },
+      {
+        "column": "Phone",
+        "dataType": "string",
+        "tags": [
+          "PII.Phone"
+        ],
+        "sensitivity": "Confidential"
+      },
+      {
+        "column": "HomePage",
+        "dataType": "string",
+        "tags": [
+          "Business.URL"
+        ],
+        "sensitivity": "Public"
+      }
+    ],
+    "system": "Contoso Dynamics 365 Sales (Dataverse)",
+    "systemId": "SYS-D365-SALES-01",
+    "sourceTable": "Northwind.svc/Suppliers",
+    "containsPII": true,
+    "piiColumnCount": 4,
+    "tagSummary": [
+      "Business.OrgName",
+      "Business.URL",
+      "Identifier",
+      "Location",
+      "PII.Address",
+      "PII.JobTitle",
+      "PII.Name",
+      "PII.Phone"
+    ],
+    "lastScanned": "2026-10-15T02:10:00Z",
+    "sourceLink": "https://datasentinel.contoso.com/assets/DS-ASSET-006"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "source": "Data Sentinel (mock)",
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "asset": {
+    "assetId": "DS-ASSET-005",
+    "name": "Products",
+    "dataverseEquivalent": "product",
+    "domain": "Supply Chain",
+    "owner": "Steven Buchanan",
+    "ownerEmail": "steven.buchanan@contoso.com",
+    "classification": "Internal",
+    "riskLevel": "Low",
+    "riskScore": 15,
+    "qualityScore": 93,
+    "rowCount": 77,
+    "description": "Product catalogue with pricing and stock levels.",
+    "lineage": [
+      "Dynamics 365 (product)",
+      "Lakehouse silver.products",
+      "Power BI: Inventory"
+    ],
+    "columns": [
+      {
+        "column": "ProductID",
+        "dataType": "int32",
+        "tags": [
+          "Identifier"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "ProductName",
+        "dataType": "string",
+        "tags": [
+          "Business.ProductName"
+        ],
+        "sensitivity": "Public"
+      },
+      {
+        "column": "SupplierID",
+        "dataType": "int32",
+        "tags": [
+          "Identifier",
+          "ForeignKey:Suppliers"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "CategoryID",
+        "dataType": "int32",
+        "tags": [
+          "Identifier",
+          "ForeignKey:Categories"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "UnitPrice",
+        "dataType": "decimal",
+        "tags": [
+          "Financial.Price"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "UnitsInStock",
+        "dataType": "int16",
+        "tags": [
+          "Inventory"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "UnitsOnOrder",
+        "dataType": "int16",
+        "tags": [
+          "Inventory"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "ReorderLevel",
+        "dataType": "int16",
+        "tags": [
+          "Inventory"
+        ],
+        "sensitivity": "Internal"
+      },
+      {
+        "column": "Discontinued",
+        "dataType": "boolean",
+        "tags": [
+          "Status"
+        ],
+        "sensitivity": "Public"
+      }
+    ],
+    "system": "Contoso Dynamics 365 Sales (Dataverse)",
+    "systemId": "SYS-D365-SALES-01",
+    "sourceTable": "Northwind.svc/Products",
+    "containsPII": false,
+    "piiColumnCount": 0,
+    "tagSummary": [
+      "Business.ProductName",
+      "Financial.Price",
+      "ForeignKey",
+      "Identifier",
+      "Inventory",
+      "Status"
+    ],
+    "lastScanned": "2026-10-15T02:10:00Z",
+    "sourceLink": "https://datasentinel.contoso.com/assets/DS-ASSET-005"
+  }
+}

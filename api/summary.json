@@ -1,0 +1,57 @@
+{
+  "source": "Data Sentinel (mock)",
+  "system": {
+    "systemId": "SYS-D365-SALES-01",
+    "systemName": "Contoso Dynamics 365 Sales (Dataverse)",
+    "platform": "Microsoft Dataverse",
+    "environment": "Production",
+    "standInSource": "https://services.odata.org/V4/Northwind/Northwind.svc",
+    "note": "Demo stand-in. Northwind OData V4 tables play the role of Dataverse tables."
+  },
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "count": 3,
+  "domains": [
+    {
+      "domain": "Sales",
+      "assetCount": 3,
+      "highOrCriticalRisk": 1,
+      "assetsWithPII": 2,
+      "openFindings": 3,
+      "criticalOpen": 0,
+      "aiEligible": 1,
+      "aiEligibleWithMasking": 2,
+      "aiNotEligible": 0,
+      "avgQualityScore": 90.7,
+      "lastScan": "2026-10-15T02:10:00Z",
+      "sourceLink": "https://datasentinel.contoso.com/domains/sales"
+    },
+    {
+      "domain": "HR",
+      "assetCount": 1,
+      "highOrCriticalRisk": 1,
+      "assetsWithPII": 1,
+      "openFindings": 2,
+      "criticalOpen": 1,
+      "aiEligible": 0,
+      "aiEligibleWithMasking": 0,
+      "aiNotEligible": 1,
+      "avgQualityScore": 78.0,
+      "lastScan": "2026-10-15T02:10:00Z",
+      "sourceLink": "https://datasentinel.contoso.com/domains/hr"
+    },
+    {
+      "domain": "Supply Chain",
+      "assetCount": 4,
+      "highOrCriticalRisk": 0,
+      "assetsWithPII": 1,
+      "openFindings": 1,
+      "criticalOpen": 0,
+      "aiEligible": 3,
+      "aiEligibleWithMasking": 1,
+      "aiNotEligible": 0,
+      "avgQualityScore": 95.0,
+      "lastScan": "2026-10-15T02:10:00Z",
+      "sourceLink": "https://datasentinel.contoso.com/domains/supply-chain"
+    }
+  ]
+}

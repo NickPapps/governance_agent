@@ -1,0 +1,37 @@
+{
+  "source": "Data Sentinel (mock)",
+  "system": {
+    "systemId": "SYS-D365-SALES-01",
+    "systemName": "Contoso Dynamics 365 Sales (Dataverse)",
+    "platform": "Microsoft Dataverse",
+    "environment": "Production",
+    "standInSource": "https://services.odata.org/V4/Northwind/Northwind.svc",
+    "note": "Demo stand-in. Northwind OData V4 tables play the role of Dataverse tables."
+  },
+  "generatedAt": "2026-10-15T02:10:00Z",
+  "count": 2,
+  "requests": [
+    {
+      "requestId": "REM-2026-0042",
+      "findingId": "DS-F-1003",
+      "assetId": "DS-ASSET-001",
+      "requestedBy": "maria.anders@contoso.com",
+      "justification": "Agent must not expose contact phone numbers.",
+      "status": "Approved",
+      "approver": "dpo@contoso.com",
+      "createdAt": "2026-09-29T14:02:00Z",
+      "decidedAt": "2026-09-30T09:12:00Z"
+    },
+    {
+      "requestId": "REM-2026-0043",
+      "findingId": "DS-F-1006",
+      "assetId": "DS-ASSET-003",
+      "requestedBy": "nancy.davolio@contoso.com",
+      "justification": "Retention purge of bronze layer.",
+      "status": "Completed",
+      "approver": "dpo@contoso.com",
+      "createdAt": "2026-08-13T10:00:00Z",
+      "decidedAt": "2026-08-14T08:30:00Z"
+    }
+  ]
+}
